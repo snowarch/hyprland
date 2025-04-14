@@ -1,0 +1,64 @@
+.chat-bot {
+  > .info {
+    @extend .module;
+    padding: 10px 5px;
+    color: $secondary;
+  }
+
+  .messages {
+    .message {
+      @extend .module;
+      padding: 5px;
+
+      .image {
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+      }
+      .copy {
+        padding: 5px;
+        margin: 5px;
+      }
+
+      &.user {
+        border-radius: 20px;
+      }
+
+      .info {
+        padding: 5px;
+        font-size: 0.9em;
+      }
+
+      .body {
+        padding: 10px;
+        font-size: 1em;
+
+        .code-block {
+          background: $background-transparent;
+          border-radius: 10px;
+          padding: 10px;
+          color: $secondary;
+
+          .copy {
+            margin: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    background: $background-secondary;
+    border-radius: 10px;
+    padding: 10px;
+
+    entry {
+      border-radius: 50px;
+    }
+
+    .clear {
+      @extend .danger;
+      padding: 5px;
+    }
+  }
+}

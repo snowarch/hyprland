@@ -1,0 +1,198 @@
+// Define the theme variables
+
+* {
+  transition: all 0.5s;
+  font-weight: 500;
+}
+
+.module {
+  background: $background-transparent;
+  color: $foreground;
+  min-height: 1px;
+  border: none;
+  box-shadow: none;
+  border-radius: 10px;
+  font-size: $FONT-SIZE;
+  text-shadow: none;
+  padding: $SCALE - 10;
+  margin: 0;
+}
+
+.icon,
+image,
+button,
+.button {
+  font-size: $ICON-SIZE;
+  font-family: "JetBrainsMono NFP";
+  color: $foreground;
+}
+
+button,
+.button {
+  @extend .module;
+  padding: $SCALE / 2 $SCALE;
+
+  min-width: 20px;
+  min-height: 20px;
+
+  background: $background-secondary;
+
+  &:hover {
+    background: $background;
+    text-shadow: $foreground 0 0 1px;
+  }
+  &:focus,
+  &:checked {
+    outline: none;
+    // border-color: transparent;
+  }
+  &.checked {
+    background: $secondary;
+    color: $color0;
+  }
+}
+
+dialog {
+  @extend .module;
+}
+
+filechooserbutton * {
+  min-width: 0px;
+  min-height: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.danger {
+  background: $red;
+  color: $foreground;
+  &:hover,
+  &:checked {
+    background: rgba($red, 0.8); // Pre-calculated hover and checked state
+  }
+}
+
+.success {
+  background: $green;
+  color: $foreground;
+  &:hover,
+  &:checked {
+    background: rgba($green, 0.8); // Pre-calculated hover and checked state
+  }
+}
+
+entry {
+  padding: $SCALE / 2;
+  border-radius: 10px;
+  color: $foreground;
+  background: $background-secondary;
+  border: unset;
+  &:focus {
+    box-shadow: 0px 4px 10px $background; // Only bottom shadow
+  }
+}
+
+separator {
+  border-top: 1px solid $tertiary;
+}
+
+// menu {
+//   @extend .module;
+//   border-radius: 0;
+//   background: $background;
+//   padding: 0;
+//   menuitem {
+//     border-radius: 0;
+//     padding: 0;
+//     margin: 0;
+//     &:hover {
+//       background: $secondary;
+//     }
+//   }
+// }
+
+levelbar {
+  margin: 0;
+  padding: 0;
+  trough {
+    background: $background-transparent;
+    border: unset;
+    min-height: 5px;
+    padding: 5px;
+    .filled {
+      box-shadow: 0 0 10px 0 $secondary;
+      background: $secondary;
+      border-radius: 10px;
+      border: unset;
+    }
+  }
+}
+
+switch {
+  @extend .module;
+  margin: 0;
+  padding: 0;
+  slider {
+    @extend .slider;
+  }
+}
+
+scrollable > * {
+  border-width: 0;
+}
+
+scrolledwindow {
+  slider {
+    background: black;
+  }
+}
+
+.switch {
+  @extend .module;
+  margin: 0;
+  padding: 0;
+  slider {
+    border-radius: 10px;
+    font-size: 0.9em;
+    margin: 5px;
+    background: mix($foreground, $secondary, 50%);
+  }
+}
+
+.slider {
+  padding: 0px;
+
+  trough {
+    background: $background-transparent;
+    color: black;
+    min-height: 6.9px;
+    padding: 0px;
+
+    slider {
+      background: transparent;
+      min-height: 0px;
+      min-width: 0px;
+      margin: 0px;
+    }
+
+    highlight {
+      background: $secondary;
+    }
+  }
+
+  &:hover highlight {
+    background: $tertiary;
+  }
+}
+
+.custom-revealer {
+  @extend .button;
+
+  .slider {
+    margin: 0px 5px;
+  }
+
+  .trigger {
+    @extend .button;
+  }
+}

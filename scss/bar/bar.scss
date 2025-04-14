@@ -1,0 +1,17 @@
+.bar {
+  border-radius: 50px;
+  padding: 5px;
+  background: $background-transparent;
+
+  .module {
+    padding: ($SCALE - 10) / 10 $SCALE / 2;
+  }
+
+  &.full {
+    background: $background-transparent;
+  }
+
+  &.empty {
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
+}

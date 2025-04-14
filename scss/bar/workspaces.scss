@@ -1,0 +1,71 @@
+$gradient-Colors: $color0, $color1, $color2, $color3, $color4, $color5, $color6;
+
+$custom-background: linear-gradient(
+    rgba($background, 0.33),
+    rgba($background, 0.33)
+  ),
+  linear-gradient(to bottom right, $gradient-Colors);
+
+.bar-left {
+  .actions {
+    button {
+      border-radius: 0px;
+    }
+    button:first-child {
+      border-radius: 10px 0px 0px 10px;
+    }
+    button:last-child {
+      border-radius: 0px 10px 10px 0px;
+    }
+  }
+  .workspaces {
+    background: $background-transparent;
+    border-radius: 10px;
+    .workspace-group {
+      border-radius: 10px;
+      &.active {
+        background: $background-secondary;
+      }
+      &.inactive button {
+        background: transparent;
+        padding: 0px;
+      }
+    }
+    button {
+      padding: 0px 5px;
+      ////////////////////////////
+      &.focused {
+        background-image: $custom-background;
+        animation: workspace-focus 1s;
+      }
+      &.same-focused {
+        background-image: $custom-background;
+      }
+      &.unfocused {
+        background-image: $custom-background;
+        animation: workspace-unfocus 1s;
+      }
+      &.new-app {
+        @extend .danger;
+      }
+    }
+  }
+}
+
+@keyframes workspace-focus {
+  0% {
+    background: $background-transparent;
+  }
+  100% {
+    background: $custom-background;
+  }
+}
+
+@keyframes workspace-unfocus {
+  0% {
+    background: $custom-background;
+  }
+  100% {
+    background: $background-transparent;
+  }
+}
